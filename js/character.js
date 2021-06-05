@@ -1,5 +1,5 @@
 let character = {
-    obj:document.querySelector(".field>img"),
+    obj:document.querySelector(".field>.userTank"),
     position:findStart(fieldArray, height, width),
     rotation: Math.PI
 };

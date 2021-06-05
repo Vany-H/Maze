@@ -36,6 +36,32 @@ function checkNeighbours(array, coord, step){
     }
 }
 
+function checkNeighboursEn(array, coord, step){
+    const allNeighbours = [
+        {x: coord.x, y: coord.y+step}, 
+        {x: coord.x, y: coord.y-step}, 
+        {x: coord.x+step, y: coord.y}, 
+        {x: coord.x-step, y: coord.y}
+    ];
+    let neighbours = [];
+
+    for(let i=0; i<4; i++){
+        if(allNeighbours[i].x > 0 && allNeighbours[i].x < width && allNeighbours[i].y > 0 && allNeighbours[i].y < height){
+            if(array[allNeighbours[i].y][allNeighbours[i].x] === 2){
+                neighbours.push(allNeighbours[i]);
+            }
+        }
+    }
+
+    console.log(neighbours);
+
+    if(neighbours.length != 0){
+        return neighbours[Math.floor(Math.random()*neighbours.length)];
+    }else{
+        return null;
+    }
+}
+
 function newMaze(array, coord1, coord2){
     let newArray = array; 
     let xBuff = coord2.x - coord1.x;
