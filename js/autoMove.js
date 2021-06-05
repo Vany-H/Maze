@@ -5,6 +5,7 @@ let characterEnemy = {
 };
 
 let way = [];
+console.log("ok");
 
 characterEnemy.obj.style.top = characterEnemy.position.y * sizeBlock + "px";
 characterEnemy.obj.style.left = characterEnemy.position.x * sizeBlock + "px";
@@ -20,8 +21,6 @@ function autoMove() {
   } else {
     characterEnemy.rotation += Math.PI / 2;
   }
-
-  console.log(characterEnemy.obj.style.rotate);
 
   characterEnemy.obj.style.top = characterEnemy.position.y * sizeBlock + "px";
   characterEnemy.obj.style.left = characterEnemy.position.x * sizeBlock + "px";

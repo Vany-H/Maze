@@ -56,15 +56,24 @@ function checkWayEn(array, character) {
     positionBuff.x < array[0].length
   ) {
     if (array[Y][X] === 4) {
+      positionBuff.x = X;
+      positionBuff.y = Y;
+
+      characterBuff.position = positionBuff;
+      characterBuff.rotation = 0;
       clearInterval(timer);
-      return 0;
+      return characterBuff;
     } else {
       X = positionBuff.x + Math.round(1 * Math.sin(character.rotation));
       Y = positionBuff.y + Math.round(1 * Math.cos(character.rotation) * -1);
 
       if (array[Y][X] === 4) {
+        positionBuff.x = X;
+        positionBuff.y = Y;
+
+        characterBuff.position = positionBuff;
         clearInterval(timer);
-        return 0;
+        return characterBuff;
       } else {
         rotateBuff = character.rotation - Math.PI / 2;
 
@@ -72,8 +81,13 @@ function checkWayEn(array, character) {
         Y = positionBuff.y + Math.round(1 * Math.cos(rotateBuff) * -1);
 
         if (array[Y][X] === 4) {
+          positionBuff.x = X;
+          positionBuff.y = Y;
+
+          characterBuff.position = positionBuff;
+          characterBuff.rotation = 0;
           clearInterval(timer);
-          return 0;
+          return characterBuff;
         }
       }
     }
