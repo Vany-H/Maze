@@ -38,6 +38,21 @@ img {
 	z-index: 100;
 }
 
-.textarea:focus::placeholder {
+.text-area:focus::placeholder {
 	opacity: 0;
+}
+
+body {
+	display: flex;
+}
+
+.interface {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 50px;
+}
+
+.text-area {
+	margin-bottom: 20px;
 }
